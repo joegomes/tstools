@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tstools"
+version = "0.1.0"
+description = "Tools for optimization of transition states"
+authors = [
+  { name = "Joe Gomes", email = "joe-gomes@uiowa.edu" }
+]
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.9"
+dependencies = [
+  "ase>=3.22",
+  "pyyaml>=6.0"
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest",
+  "black",
+  "ruff",
+]
+
+[project.scripts]
+tstools = "tstools.main:main"
+
+[tool.setuptools]
+packages = ["tstools"]
