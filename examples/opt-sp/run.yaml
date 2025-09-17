@@ -1,0 +1,26 @@
+global:
+  geometry: "in.xyz"
+  package: "qchem"
+
+  # System-level constants
+  system:
+    charge: 0
+    multiplicity: 1
+
+  # Default model chemistry
+  model_chemistry:
+    method: "B3LYP"
+    basis: "6-31G*"
+
+jobs:
+  - name: "optimization"
+    parameters:
+      max_cycles: 200
+      # Uses global model chemistry (B3LYP/6-31G*)
+
+  - name: "singlepoint"
+    parameters:
+      # Overrides method/basis only
+      method: "CCSD(T)"
+      basis: "cc-pVTZ"
+
